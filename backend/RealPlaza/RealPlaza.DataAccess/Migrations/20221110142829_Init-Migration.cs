@@ -33,6 +33,7 @@ namespace RealPlaza.DataAccess.Migrations
                     CreatedAt = table.Column<DateTime>(nullable: false, defaultValueSql: "GETDATE()"),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     Price = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    Avatar = table.Column<string>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -63,19 +64,19 @@ namespace RealPlaza.DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "CategoryId", "Name", "Price" },
+                columns: new[] { "Id", "Avatar", "CategoryId", "Name", "Price" },
                 values: new object[,]
                 {
-                    { 1, 1, "Televisor LG 1040K HD", 1000m },
-                    { 4, 1, "Televisor Sony 1040K HD", 1000m },
-                    { 7, 1, "Televisor Samsumg 1040K HD", 1000m },
-                    { 10, 1, "Televisor Daweo 1040K HD", 1000m },
-                    { 2, 2, "Laptop MAC M1", 5000m },
-                    { 5, 2, "Laptop MAC M2", 6000m },
-                    { 8, 2, "Laptop MAC M1", 7000m },
-                    { 3, 3, "Motorola G9", 2000m },
-                    { 6, 3, "Motorola G9", 2000m },
-                    { 9, 3, "Motorola G9", 2000m }
+                    { 1, "https://realplaza.vtexassets.com/arquivos/ids/19952643-800-auto?v=637787185990700000&width=800&height=auto&aspect=true", 1, "Televisor SAMSUNG LED 70' Ultra HD / 4K Smart", 1000m },
+                    { 4, "https://realplaza.vtexassets.com/arquivos/ids/16669049-800-auto?v=637583552723330000&width=800&height=auto&aspect=true", 1, "Televisor Sony 4K HDR Processor X1 65", 1000m },
+                    { 7, "https://realplaza.vtexassets.com/arquivos/ids/30794966-800-auto?v=638019917577870000&width=800&height=auto&aspect=true", 1, "Televisor Samsung Smart TV 65' Crystal UHD 4K", 1000m },
+                    { 10, "https://realplaza.vtexassets.com/arquivos/ids/29471812-800-auto?v=637934066359800000&width=800&height=auto&aspect=true", 1, "Apple MacBook Pro con M1 Max Chip", 1000m },
+                    { 2, "https://realplaza.vtexassets.com/arquivos/ids/29355975-800-auto?v=637926621748600000&width=800&height=auto&aspect=true", 2, "Laptop TUF GAMING 8GB RAM 512GB SSD", 5000m },
+                    { 5, "https://realplaza.vtexassets.com/arquivos/ids/18614998-300-auto?v=637769274914830000&width=300&height=auto&aspect=true", 2, "Laptop MAC M2 16GB RAM 512GB SSD", 6000m },
+                    { 8, "https://realplaza.vtexassets.com/arquivos/ids/17871602-800-auto?v=637738853647470000&width=800&height=auto&aspect=true", 2, "Netbook LENOVO D330-10IGL 32GB RAM 512GB SSD", 7000m },
+                    { 3, "https://realplaza.vtexassets.com/arquivos/ids/30749072-800-auto?v=638016157038870000&width=800&height=auto&aspect=true", 3, "Motorola Moto G9 Power RAM 4GB 128GB Azul", 2000m },
+                    { 6, "https://realplaza.vtexassets.com/arquivos/ids/17895992-800-auto?v=637741743708070000&width=800&height=auto&aspect=true", 3, "Impresora Multifuncional Epson L3210 Ecotank", 2000m },
+                    { 9, "https://realplaza.vtexassets.com/arquivos/ids/29754680-800-auto?v=637953073800630000&width=800&height=auto&aspect=true", 3, "Parlante bluetooth JBL Party Box 710 potencia 800W RMS", 2000m }
                 });
 
             migrationBuilder.CreateIndex(

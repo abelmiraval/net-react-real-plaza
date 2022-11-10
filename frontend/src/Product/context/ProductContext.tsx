@@ -5,7 +5,9 @@ export type ProductContextProps = {
 	productState: ProductState;
 	handleChangeSelect: (e: ChangeEvent<HTMLSelectElement>) => void;
 	handleChangeInput: (e: ChangeEvent<HTMLInputElement>) => void;
-	getAllProducts: (orderBy: string, price: number) => Promise<void>;
+	getAllProducts: (orderBy: string, price: number, page: number) => Promise<void>;
+	nextPage: () => void;
+	prevPage: () => void;
 };
 
 export const ProductContext = createContext<ProductContextProps>({} as ProductContextProps);

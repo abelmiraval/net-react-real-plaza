@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace RealPlaza.Entities
 {
@@ -10,6 +9,8 @@ namespace RealPlaza.Entities
         public string Name { get; set; }
         [Required] 
         public decimal Price { get; set; }
+        [Required]
+        public string Avatar { get; set;}
         [Required]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }

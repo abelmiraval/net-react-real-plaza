@@ -4,10 +4,10 @@ import { ProductItem } from '../ProductItem/ProductItem';
 import styles from './style.module.css';
 
 export const ProductList = () => {
-	const { products, price, orderBy, getAllProducts } = useProduct();
+	const { getAllProducts, products, price, orderBy, page } = useProduct();
 
 	useEffect(() => {
-		getAllProducts(orderBy, price).then((res) => console.log('response', res));
+		getAllProducts(orderBy, price, page).then((res) => console.log('response', res));
 	}, [orderBy, price]);
 
 	return (

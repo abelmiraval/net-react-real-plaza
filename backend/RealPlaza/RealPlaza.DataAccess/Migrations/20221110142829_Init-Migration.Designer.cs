@@ -10,7 +10,7 @@ using RealPlaza.DataAccess;
 namespace RealPlaza.DataAccess.Migrations
 {
     [DbContext(typeof(RealPlazaDbContext))]
-    [Migration("20221109134630_Init-Migration")]
+    [Migration("20221110142829_Init-Migration")]
     partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,6 +85,10 @@ namespace RealPlaza.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Avatar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -116,90 +120,100 @@ namespace RealPlaza.DataAccess.Migrations
                         new
                         {
                             Id = 1,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/19952643-800-auto?v=637787185990700000&width=800&height=auto&aspect=true",
                             CategoryId = 1,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Televisor LG 1040K HD",
+                            Name = "Televisor SAMSUNG LED 70' Ultra HD / 4K Smart",
                             Price = 1000m,
                             Status = false
                         },
                         new
                         {
                             Id = 2,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/29355975-800-auto?v=637926621748600000&width=800&height=auto&aspect=true",
                             CategoryId = 2,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Laptop MAC M1",
+                            Name = "Laptop TUF GAMING 8GB RAM 512GB SSD",
                             Price = 5000m,
                             Status = false
                         },
                         new
                         {
                             Id = 3,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/30749072-800-auto?v=638016157038870000&width=800&height=auto&aspect=true",
                             CategoryId = 3,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Motorola G9",
+                            Name = "Motorola Moto G9 Power RAM 4GB 128GB Azul",
                             Price = 2000m,
                             Status = false
                         },
                         new
                         {
                             Id = 4,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/16669049-800-auto?v=637583552723330000&width=800&height=auto&aspect=true",
                             CategoryId = 1,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Televisor Sony 1040K HD",
+                            Name = "Televisor Sony 4K HDR Processor X1 65",
                             Price = 1000m,
                             Status = false
                         },
                         new
                         {
                             Id = 5,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/18614998-300-auto?v=637769274914830000&width=300&height=auto&aspect=true",
                             CategoryId = 2,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Laptop MAC M2",
+                            Name = "Laptop MAC M2 16GB RAM 512GB SSD",
                             Price = 6000m,
                             Status = false
                         },
                         new
                         {
                             Id = 6,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/17895992-800-auto?v=637741743708070000&width=800&height=auto&aspect=true",
                             CategoryId = 3,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Motorola G9",
+                            Name = "Impresora Multifuncional Epson L3210 Ecotank",
                             Price = 2000m,
                             Status = false
                         },
                         new
                         {
                             Id = 7,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/30794966-800-auto?v=638019917577870000&width=800&height=auto&aspect=true",
                             CategoryId = 1,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Televisor Samsumg 1040K HD",
+                            Name = "Televisor Samsung Smart TV 65' Crystal UHD 4K",
                             Price = 1000m,
                             Status = false
                         },
                         new
                         {
                             Id = 8,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/17871602-800-auto?v=637738853647470000&width=800&height=auto&aspect=true",
                             CategoryId = 2,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Laptop MAC M1",
+                            Name = "Netbook LENOVO D330-10IGL 32GB RAM 512GB SSD",
                             Price = 7000m,
                             Status = false
                         },
                         new
                         {
                             Id = 9,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/29754680-800-auto?v=637953073800630000&width=800&height=auto&aspect=true",
                             CategoryId = 3,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Motorola G9",
+                            Name = "Parlante bluetooth JBL Party Box 710 potencia 800W RMS",
                             Price = 2000m,
                             Status = false
                         },
                         new
                         {
                             Id = 10,
+                            Avatar = "https://realplaza.vtexassets.com/arquivos/ids/29471812-800-auto?v=637934066359800000&width=800&height=auto&aspect=true",
                             CategoryId = 1,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Televisor Daweo 1040K HD",
+                            Name = "Apple MacBook Pro con M1 Max Chip",
                             Price = 1000m,
                             Status = false
                         });
