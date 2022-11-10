@@ -1,9 +1,11 @@
-import { createContext } from 'react';
+import { ChangeEvent, createContext } from 'react';
 import { Product, ProductState } from '../interfaces/interfaces';
 
 export type ProductContextProps = {
 	productState: ProductState;
-	getAllProducts: () => Promise<void>;
+	handleChangeSelect: (e: ChangeEvent<HTMLSelectElement>) => void;
+	handleChangeInput: (e: ChangeEvent<HTMLInputElement>) => void;
+	getAllProducts: (orderBy: string, price: number) => Promise<void>;
 };
 
 export const ProductContext = createContext<ProductContextProps>({} as ProductContextProps);

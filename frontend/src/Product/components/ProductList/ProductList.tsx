@@ -4,11 +4,11 @@ import { ProductItem } from '../ProductItem/ProductItem';
 import styles from './style.module.css';
 
 export const ProductList = () => {
-	const { products, getAllProducts } = useProduct();
+	const { products, price, orderBy, getAllProducts } = useProduct();
 
 	useEffect(() => {
-		getAllProducts().then((res) => console.log('response', res));
-	}, []);
+		getAllProducts(orderBy, price).then((res) => console.log('response', res));
+	}, [orderBy, price]);
 
 	return (
 		<section className={styles.roomsList}>

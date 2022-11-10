@@ -3,12 +3,15 @@ import { useProduct } from '../../hooks/useProduct';
 import styles from './style.module.css';
 
 export const ProductFilter = () => {
-	const { price, minPrice, maxPrice, orderBy } = useProduct();
+	const { handleChangeSelect, handleChangeInput, price, minPrice, maxPrice, orderBy } = useProduct();
 
-	const orders = ['Mayor Precio', 'Menor Precio'].map((item, index) => {
+	const orders = [
+		{ id: 'DESC', text: 'Mayor Precio' },
+		{ id: 'ASC', text: 'Menor Precio' }
+	].map((item, index) => {
 		return (
-			<option key={index} value={item}>
-				{item}
+			<option key={index} value={item.id}>
+				{item.text}
 			</option>
 		);
 	});
@@ -22,7 +25,7 @@ export const ProductFilter = () => {
 						id="orderBy"
 						value={orderBy}
 						className={styles.formControl}
-						// onChange={() => handleChange('DESC')}
+						onChange={handleChangeSelect}
 					>
 						{orders}
 					</select>
@@ -34,10 +37,11 @@ export const ProductFilter = () => {
 						name="price"
 						min={minPrice}
 						max={maxPrice}
+						step="500"
 						id="price"
 						value={price}
 						className={styles.formControl}
-						// onChange={handleChange}
+						onChange={handleChangeInput}
 					/>
 				</div>
 			</form>
