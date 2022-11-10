@@ -13,5 +13,5 @@ dotnet ef database update --project .\RealPlaza.DataAccess\ --startup-project .\
 
 - Run watch
 ````
-
+dotnet watch run --project .\RealPlaza.API\
 ````
