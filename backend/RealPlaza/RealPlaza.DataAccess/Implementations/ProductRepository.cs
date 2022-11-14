@@ -28,11 +28,12 @@ namespace RealPlaza.DataAccess.Implementations
 
             var query = _context.Set<Product>()
                 .Include(p => p.Category)
-                .Where(expression)
-                .Skip((page - 1) * rows)
-            .Take(rows);
+                .Where(expression);
 
             query = orderBy == "DESC" ? query.OrderByDescending(p => p.Price) : query.OrderBy(p => p.Price);
+
+            query = query.Skip((page - 1) * rows)
+                .Take(rows);
 
             var totalCount = await _context.Set<Product>()
                 .Where(expression)
