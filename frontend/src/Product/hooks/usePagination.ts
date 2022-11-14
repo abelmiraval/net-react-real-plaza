@@ -2,27 +2,20 @@ import { useContext } from 'react';
 import { ProductContext } from '../context/ProductContext';
 
 export const usePagination = () => {
-	const { productState, getAllProducts, nextPage, prevPage } = useContext(ProductContext);
-	const { products, price, orderBy, page, totalPage } = productState;
+	const { productState, nextPage, prevPage } = useContext(ProductContext);
+	const { page, totalPage } = productState;
 
 	const canNextPage = () => {
-		const currentPage = page + 1;
-		const lastPage = Math.ceil(totalPage / 6);
-		return currentPage !== lastPage;
+		return page === totalPage;
 	};
 
 	const canPrevPage = () => {
-		return page !== 0;
+		return page === 1;
 	};
 
 	return {
-		products: products,
-		price: price,
-		orderBy: orderBy,
-		page: page,
-		getAllProducts: getAllProducts,
-		nextPage: nextPage,
-		prevPage: prevPage,
+		nextPage,
+		prevPage,
 		canNextPage,
 		canPrevPage
 	};

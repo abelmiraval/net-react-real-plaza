@@ -8,7 +8,7 @@ export const ProductList = () => {
 
 	useEffect(() => {
 		getAllProducts(orderBy, price, page).then((res) => console.log('response', res));
-	}, [orderBy, price]);
+	}, [orderBy, price, page]);
 
 	return (
 		<section className={styles.roomsList}>
